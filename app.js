@@ -31,7 +31,8 @@ app.post('/collect', function(req, res){
 		name: 	req.body.channel_name
 	};
 	var user = {
-		id: 	req.body.user_id
+		id: 	req.body.user_id,
+		name:   req.body.user_name
 	};
 	var msgText = req.body.text;
 	var teamDomain = req.body.team_domain;
@@ -65,7 +66,7 @@ app.post('/collect', function(req, res){
 	var data = {
 		v: 		1,
 		tid: 	env_var.ga_key,
-		cid: 	user.id,
+		cid: 	user.name,
 		ds:  	"slack", //data source
 		cs: 	"slack", // campaign source
 		cd1: 	user.name,
@@ -82,7 +83,7 @@ app.post('/collect', function(req, res){
 		dt:		"Slack Channel: "+channel.name,
 		t: 		"event",
 		ec: 	"slack: "+ channel.name + "|" + channel.id,
-		ea: 	"post by " + user.id,
+		ea: 	"post by " + user.name,
 		el: 	msgText,
 		ev: 	1 
 	};
