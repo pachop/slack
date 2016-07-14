@@ -68,7 +68,7 @@ app.post('/collect', function(req, res){
 		cid: 	user.id,
 		ds:  	"slack", //data source
 		cs: 	"slack", // campaign source
-		cd1: 	user.id,
+		cd1: 	user.name,
 		cd2: 	channel.name,
 		cd3: 	msgText,
 		cm1: 	wordCount,
