@@ -66,7 +66,7 @@ app.post('/collect', function(req, res){
 	var data = {
 		v: 		1,
 		tid: 	env_var.ga_key,
-		cid: 	user.id,
+		cid: 	user.name,
 		ds:  	"slack", //data source
 		cs: 	"slack", // campaign source
 		cd1: 	user.name,
@@ -83,7 +83,7 @@ app.post('/collect', function(req, res){
 		dt:		"Slack Channel: "+channel.name,
 		t: 		"event",
 		ec: 	"slack: "+ channel.name + "|" + channel.id,
-		ea: 	"post by " + user.id,
+		ea: 	"post by " + user.name,
 		el: 	msgText,
 		ev: 	1 
 	};
